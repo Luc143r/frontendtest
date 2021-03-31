@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Тестовое задание</title>
+</head>
+<body>
+    <div class="wrapper">
+        
+        <div id="header">
+            <p id="text_header">Тестовое задание</p>
+            <a href="index.html"><img id="logo" src="images/logo.png" alt="Logo"></a>
+        </div>
+
+
+        <div id="sidebar">
+            <p id="filter">Фильтры</p>
+            <hr id="line_filter">
+
+            <form action="#">
+                <p id="id">ID<br>
+                <input type="text" placeholder="Введите значение">
+                </p>
+            </form>
+
+            <form action="#">
+                <p id="number">Номер накладной<br>
+                <input type="text" placeholder="Введите значение">
+                </p>
+            </form>
+
+            <form action="#">
+                <p id="date">Время прибытия на выгрузку<br><br>
+                <label for="input_date1">с</label>
+                <input type="date" class="input_date" id="input_date1" name="input_date1">
+                <label for="input_date2" id="label_date2">по</label>
+                <input type="date" class="input_date" id="input_date2" name="input_date2">
+                </p>
+            </form>
+
+            <form action="#">
+                <p id="type">Тип заказа<br>
+                <select name="type_order" id="type_order_select">
+                    <option>RUED</option>
+                    <option>RUEX</option>
+                    <option>RUSG</option>
+                </select>
+                </p>
+            </form>
+        </div>
+
+
+        <div id="sort">
+            <select name="select_sort" id="select_sort">
+                <option>По ID</option>
+                <option>По номеру накладной</option>
+                <option>По времени прибытия на выгрузку</option>
+                <option>По типу заказа</option>
+            </select>
+
+            <form action="#">
+                <input type="checkbox" value="on_move" onclick="checkMove()" id="check_box">
+            </form>
+            <p id="text_on_move">Включить перетаскивание</p>
+
+            <button id="add_button" onclick="addCard()">Добавить</button>
+
+        </div>
+
+
+        <div id="card">
+            <div class="card" id="card1" draggable="false">
+                <div class="header_card">
+                    <p class="card_name">Карточка 1
+                        <img src="./images/pin.png" alt="pin" class="pin_ico" id="pin_ico1" onclick="pin_card()">
+                        <img src="./images/vertical_dots.png" alt="dots" class="dots_ico" id="drop_menu1" class="drop_menu" onclick="dropMenu()">
+                        <div id="dropdown1" class="dropdowncontent">
+                            <img src="./images/edit.png" alt="edit" class="ico">редактировать
+                            <img src="./images/delete.png" alt="delete" id="del_card1" class="ico" onclick="deleteCard()">удалить
+                        </div>
+                    </p>
+                </div>
+                <div class="content_card">
+                    <p class="string_card">A<hr class="line_card" id="line_card1"></p>
+                    <p class="string_card">12.03.2021<hr class="line_card" id="line_card2"></p>
+                    <p class="string_card"> <hr class="line_card" id="line_card3"></p>
+                    <p class="string_card"> <hr class="line_card" id="line_card4"></p>
+                    <p class="string_card"> <hr class="line_card" id="line_card5"></p>
+                </div>
+            </div>
+
+
+            <div class="card" id="card2" draggable="false">
+                <div class="header_card">
+                    <p class="card_name">Карточка 2
+                        <img src="./images/pin.png" alt="pin" class="pin_ico" id="pin_ico2" onclick="pin_card()">
+                        <img src="./images/vertical_dots.png" alt="dots" class="dots_ico" id="drop_menu2" class="drop_menu" onclick="dropMenu()">
+                        <div id="dropdown2" class="dropdowncontent">
+                            <img src="./images/edit.png" alt="edit" class="ico">редактировать
+                            <img src="./images/delete.png" alt="delete" id="del_card2" class="ico">удалить
+                        </div>
+                    </p>
+                </div>
+                <div class="content_card">
+                    <p class="string_card">B<hr class="line_card" id="line_card1"></p>
+                    <p class="string_card">07.12.2020<hr class="line_card" id="line_card2"></p>
+                    <p class="string_card"> <hr class="line_card" id="line_card3"></p>
+                    <p class="string_card"> <hr class="line_card" id="line_card4"></p>
+                    <p class="string_card"> <hr class="line_card" id="line_card5"></p>
+                </div>
+            </div>
+
+
+            <div class="card" id="card3" draggable="false">
+                <div class="header_card">
+                    <p class="card_name">Карточка 3
+                        <img src="./images/pin.png" alt="pin" class="pin_ico" id="pin_ico3" onclick="pin_card()">
+                        <img src="./images/vertical_dots.png" alt="dots" class="dots_ico" id="drop_menu3" class="drop_menu" onclick="dropMenu()">
+                        <div id="dropdown3" class="dropdowncontent">
+                            <img src="./images/edit.png" alt="edit" class="ico">редактировать
+                            <img src="./images/delete.png" alt="delete" id="del_card3" class="ico">удалить
+                        </div>
+                    </p>
+                </div>
+                <div class="content_card">
+                    <p class="string_card">C<hr class="line_card" id="line_card1"></p>
+                    <p class="string_card">02.10.2020<hr class="line_card" id="line_card2"></p>
+                    <p class="string_card"> <hr class="line_card" id="line_card3"></p>
+                    <p class="string_card"> <hr class="line_card" id="line_card4"></p>
+                    <p class="string_card"> <hr class="line_card" id="line_card5"></p>
+                </div>
+            </div>
+
+
+            <div class="card" id="card4" draggable="false">
+                <div class="header_card">
+                    <p class="card_name">Карточка 4
+                        <img src="./images/pin.png" alt="pin" class="pin_ico" id="pin_ico4" onclick="pin_card()">
+                        <img src="./images/vertical_dots.png" alt="dots" class="dots_ico" id="drop_menu4" class="drop_menu" onclick="dropMenu()">
+                        <div id="dropdown4" class="dropdowncontent">
+                            <img src="./images/edit.png" alt="edit" class="ico">редактировать
+                            <img src="./images/delete.png" alt="delete" id="del_card4" class="ico">удалить
+                        </div>
+                    </p>
+                </div>
+                <div class="content_card">
+                    <p class="string_card">D<hr class="line_card" id="line_card1"></p>
+                    <p class="string_card">13.01.2021<hr class="line_card" id="line_card2"></p>
+                    <p class="string_card"> <hr class="line_card" id="line_card3"></p>
+                    <p class="string_card"> <hr class="line_card" id="line_card4"></p>
+                    <p class="string_card"> <hr class="line_card" id="line_card5"></p>
+                </div>
+            </div>
+
+
+            <div class="card" id="card5" draggable="false">
+                <div class="header_card">
+                    <p class="card_name">Карточка 5
+                        <img src="./images/pin.png" alt="pin" class="pin_ico" id="pin_ico5" onclick="pin_card()">
+                        <img src="./images/vertical_dots.png" alt="dots" class="dots_ico" id="drop_menu5" class="drop_menu" onclick="dropMenu()">
+                        <div id="dropdown5" class="dropdowncontent">
+                            <img src="./images/edit.png" alt="edit" class="ico">редактировать
+                            <img src="./images/delete.png" alt="delete" id="del_card5" class="ico">удалить
+                        </div>
+                    </p>
+                </div>
+                <div class="content_card">
+                    <p class="string_card">E<hr class="line_card" id="line_card1"></p>
+                    <p class="string_card">05.02.2021<hr class="line_card" id="line_card2"></p>
+                    <p class="string_card"> <hr class="line_card" id="line_card3"></p>
+                    <p class="string_card"> <hr class="line_card" id="line_card4"></p>
+                    <p class="string_card"> <hr class="line_card" id="line_card5"></p>
+                </div>
+            </div>
+            <div id="add_card">
+                <p id="add_text">Добавление</p>
+                <form action="#">
+                    <p id="num_nakl">Номер накладной<br>
+                    <input type="text" placeholder="Введите значение">
+                    </p>
+                </form>
+                <form action="#">
+                    <p id="type2">Тип заказа<br>
+                    <select name="type_order" id="type_order_select2">
+                        <option>RUED</option>
+                        <option>RUEX</option>
+                        <option>RUSG</option>
+                    </select>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+
+        <div id="code">
+            <pre>
+                <code id="text_code">
+[
+    {
+        "id": "A",
+        "order": 1,
+        "fixed": false
+    },
+    {
+        "id": C",
+        "order": 3,
+        "fixed": false
+    },
+    {
+        "id": "B",
+        "order": 2,
+        "fixed": false
+    },
+    {
+        "id": "D",
+        "order": 4,
+        "fixed": false
+    },
+    {
+        "id": "E             ",
+        "order": 5,
+        "fixed": false
+    }
+]
+                </code>
+            </pre>
+        </div>
+
+
+        <div id="footer">
+
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
